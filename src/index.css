@@ -1,13 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
+
+:root {
+  --azul-oscuro: #05387e;
+  --azul-claro: #187cb8;
+  --verde-claro: #2dc29d;
+  --verde-oscuro: #26a64d;
+  --naranja: #fb632c;
+  --color-claro: #f9f3e9;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+.azul-oscuro {
+  color: var(--azul-oscuro);
+}
+
+.azul-claro {
+  color: var(--azul-claro);
+}
+
+.verde-claro {
+  color: var(--verde-claro);
+}
+
+.verde-oscuro {
+  color: var(--verde-oscuro);
+}
+
+label {
+  font-size:12px;
+  }
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Noto Sans JP', sans-serif, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+a {
+  text-decoration: none !important;
+}
+a:hover,
+small:hover {
+  text-decoration: none;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.burguer {
+  width: 50px;
+  height: 50px;
+  background-color: var(--verde-claro);
+  border-radius: 50%;
+}
+
+.burguer div {
+  width: 25px;
+  height: 2px;
+  background-color: white;
+  margin: 5px 0;
+  position: relative;
+  top: 12px;
+  left: 13px;
+}
+
+.navbar {
+  /* background-color:var(--azul-oscuro) !important; */
+}
+.navbar-toggler {
+  border: none !important;
+}
+
+#loginContainer {
+  height: 100vh;
+}
+
+#loginLeft {
+  background-image: url('./img/blucircleLogin.png');
+  background-repeat: no-repeat;
+  background-position: left/center;
+  background-size: contain;
+  background-color: #f8f8f8;
+  min-height: 100vh;
+  height:100%;
+}
+
+
+#loginLeft h1 {
+  margin-top: 120px;
+  font-size: 60px;
+  position: relative;
+  letter-spacing: -2.64px;
+}
+
+
+
+#loginLeft form {
+  margin-top:100px;
+  position: relative;
+
+}
+
+
+#loginLeft input {
+  border: 0.3px solid var(--azul-claro) !important;
+}
+
+.or::before {
+  content: '____ ';
+  position: relative;
+  top: -6px;
+  right: 5px;
+}
+
+.or::after {
+  content: '____ ';
+  position: relative;
+  top: -6px;
+  left: 10px;
+}
+
+#loginRight {
+  background-image: url('./img/loginRightElement.png');
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+#loginRight {
+  padding: 80px 0;
+  overflow: hidden;
+}
+#loginRight h1 {
+  font-size:50px;
+  letter-spacing: -1.1px;
+}
+#loginRight svg {
+  font-size: 25px;
+  color:var(--verde-claro)
+}
+
+.successLogin {
+   background-image: url('./img/semiCirculoClaroGrande.png');
+ background-repeat:no-repeat;
+ background-position: bottom;
+ background-size: contain;
+ height:100vh;
+}
+
+
+
+ #signupHeader {
+  height: 100vh;
+  background-image: url('./img/signup-bg-element.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  
+}
+
+.signupTopTitle {
+  background-image: url('./img/signuptopcircleblue.png');
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: center;
+  min-height:400px;
+  height:480px;
+}
+
+.signupTopTitle h1 {
+  font-size: 90px;
+  letter-spacing: -2.64px;
+  margin-top: 100px;
+}
+
+
+#signupForm {
+  position: relative;
+  top:-160px;
+}
+
+
+/* 
+LANDING NAV */
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--azul-oscuro);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  text-align:center;
+  background-image: url('./img/nav-bg-element.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 35px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+
+}
+
+.sidenav a:hover{
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+
+
+
+/* MEDIA QUERIES */
+
+@media (max-width: 375px) { 
+
+
+ #signupHeader {
+
+  background-image: none;
+
+  
+}
+
+
+  #signupForm {
+    background-image: none !important;
+  }
+  #loginLeft h1 {
+    margin-top: 0px;
+    font-size: 50px;
+  }
+  
+  #loginLeft form {
+    /* margin-top:150px; */
+    position: relative;
+  
+  }
+
+ .signupTopTitle h1 {
+  /* display:none; */
+  margin-top:80px;
+  font-size:40px;
+  }
+
+ #loginLeft p {
+ font-size:11px;
+ }
+ 
+ }
+
+ @media (max-width: 768px) { 
+  #signupHeader {
+
+    background-image: none;
+  
+    
+  }
+
+  #loginLeft h1{
+  /* display:none; */
+  margin-top:50px;
+  font-size:40px;
+  }
+  #form {
+    position: relative;
+    top:-10px;
+
+  }
+  .signupTopTitle  {
+  height:100px;
+
+    }
+
+  .signupTopTitle h1 {
+    /* display:none; */
+    margin-top:100px;
+    font-size:40px;
+    }
+  
+  
+  #loginLeft p,.signupTopTitle  {
+  font-size:15px;
+  }
+  
+  #loginLeft form {
+  margin-top:100px;
+  }
+
+  #loginRight h1 {
+    font-size:25px;
+    letter-spacing: -1.1px;
+  }
+
+ }
+
+ @media (max-width:992px) {
+ 
+ }
+ @media screen and (min-width: 1440px) {
+
+  #loginLeft h1{
+
+    margin-top:150px;
+    font-size:90px;
+    }
+  #loginLeft form {
+    margin-top:190px;
+    position: relative;
+  
+  }
+}
+
+ /* MEDIA QUERIES */
