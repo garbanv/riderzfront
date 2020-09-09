@@ -6,6 +6,33 @@ import Layout from '../components/layout';
 import { FaCheckCircle } from 'react-icons/fa';
 
 function App() {
+
+const [login,setLogin] = useState({
+  loginEmail:"",
+  password:""
+})
+
+async function handleLogin(e){
+
+  e.preventDefault();
+const fetchData =  await fetch('users/login',{
+      method:'POST',
+      credentials: 'include',
+      headers:{
+        'Accept': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': '*',
+        'Access-Control-Allow-Headers': '*',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({...login})
+  })
+ const response =  await fetchData;
+ const res = console.log(response)
+
+}
+
+
   return (
     <>
       <Layout>
@@ -23,14 +50,15 @@ function App() {
                   <Form className="">
                     <Form.Group controlId="formBasicEmail">
                       <Form.Label className="azul-claro">Email</Form.Label>
-                      <Form.Control type="email" placeholder="Enter email" />
-                      {/* <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-              </Form.Text> */}
+                      <Form.Control type="email" placeholder="Enter email" value={login.loginEmail} onChange={(e)=>{
+                        setLogin({...login,loginEmail:e.target.value})
+                      }}/>
                     </Form.Group>
                     <Form.Group controlId="formBasicPassword">
                       <Form.Label className="azul-claro">Password</Form.Label>
-                      <Form.Control type="password" placeholder="Password" />
+                      <Form.Control type="password" placeholder="Password" value={login.loginEmail} onChange={(e)=>{
+                        setLogin({...login,loginEmail:e.target.value})
+                      }}/>
                     </Form.Group>
                     <Link to="/resetPassword" className="d-block mb-3">
                       <small className="font-italic mb-5">
@@ -42,6 +70,7 @@ function App() {
                       type="submit"
                       className="px-5 py-2 d-block btn-block rounded-pill"
                       style={{backgroundColor:'#05387e',border:'none'}}
+                      onClick={handleLogin}
                     >
                       Login
                     </Button>

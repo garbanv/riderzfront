@@ -8,7 +8,7 @@ import { FaCheckCircle } from 'react-icons/fa';
 function App() {
 
 const [registro,setRegistro] =useState({
-  email:'',
+  loginEmail:'',
   firstName:'',
   lastName:'',
   password:'',
@@ -20,18 +20,19 @@ const [registro,setRegistro] =useState({
 async function handleRegistro(e){
 
   e.preventDefault();
-const fetchData =  await fetch('http://localhost:3001/signup',{
+const fetchData =  await fetch('users/signup',{
       method:'POST',
       credentials: 'include',
       headers:{
-        'Access-Control-Allow-Origin':'*',
+        'Accept': 'application/json',
+        'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': '*',
         'Access-Control-Allow-Headers': '*',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({...registro})
   })
- const response =  await fetchData.json()
+ const response =  await fetchData;
  const res = console.log(response)
 
 }
@@ -54,7 +55,7 @@ const fetchData =  await fetch('http://localhost:3001/signup',{
                     <Form.Group controlId="formBasicEmail">
                       <Form.Label className="azul-claro">Email</Form.Label>
                       <Form.Control type="email" placeholder="Enter email" value={registro.email} onChange={(e)=>{
-                        setRegistro({...registro,email:e.target.value})
+                        setRegistro({...registro,loginEmail:e.target.value})
                       }}/>
                     </Form.Group>
                     <Form.Group controlId="formBasicEmail">
