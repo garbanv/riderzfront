@@ -1,42 +1,70 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import Riderz from '../img/riderz.png';
-import { Link } from 'react-router-dom';
-import { Form, Button, Container, Row, Col, Image } from 'react-bootstrap';
+import { Link, Redirect, useHistory } from 'react-router-dom';
+import {
+  Form,
+  Button,
+  Container,
+  Row,
+  Col,
+  Image,
+  Alert,
+} from 'react-bootstrap';
 import Layout from '../components/layout';
-import { FaCheckCircle } from 'react-icons/fa';
+import Loader from '../components/Loader';
+import { UserContext } from '../context/userContext';
+import { FaCheckCircle, FaFacebook } from 'react-icons/fa';
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useContext(UserContext);
+  const [login, setLogin] = useState({
+    loginEmail: '',
+    password: '',
+  });
 
-const [login,setLogin] = useState({
-  loginEmail:"",
-  password:""
-})
+  const history = useHistory();
 
-async function handleLogin(e){
+  const [loading, setLoading] = useState(false);
 
-  e.preventDefault();
-const fetchData =  await fetch('users/login',{
-      method:'POST',
-      credentials: 'include',
-      headers:{
-        'Accept': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': '*',
-        'Access-Control-Allow-Headers': '*',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({...login})
-  })
- const response =  await fetchData;
- const res = console.log(response)
+  const [errMsg, setErrMsg] = useState(false);
+  const errMsgCompleteFields = 'Please complete all the fields';
 
-}
+  async function handleLogin(e) {
+    e.preventDefault();
+    if (login.loginEmail === '' || login.password === '') {
+      setErrMsg(true);
+    } else {
+      setLoading(true);
+      const fetchData = await fetch('http://localhost:7000/users/login', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': '*',
+          'Access-Control-Allow-Headers': '*',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ...login }),
+      });
+      const response = await fetchData.json();
+      const res = await response;
+      const { token, succes } = await res;
+      
 
+      if (token) {
+        localStorage.setItem('token', token);
+        setIsLoggedIn(true);
+        return history.push('/dashboard');
+      } else {
+        return history.push('/login');
+      }
+    }
+  }
 
   return (
     <>
       <Layout>
-        <Container fluid id="loginContainer">
+        <Container fluid id="loginContainer" className="pb-5">
           <Row>
             <Col md={6} id="loginLeft">
               <Row id="loginForm">
@@ -47,18 +75,37 @@ const fetchData =  await fetch('users/login',{
                   <p className="text-center text-white">
                     Login to your account
                   </p>
+
                   <Form className="">
+                    {errMsg ? (
+                      <Alert variant="danger">{errMsgCompleteFields}</Alert>
+                    ) : null}
+                    {loading ? <Loader /> : null}
                     <Form.Group controlId="formBasicEmail">
                       <Form.Label className="azul-claro">Email</Form.Label>
-                      <Form.Control type="email" placeholder="Enter email" value={login.loginEmail} onChange={(e)=>{
-                        setLogin({...login,loginEmail:e.target.value})
-                      }}/>
+                      <Form.Control
+                        required
+                        type="email"
+                        placeholder="Enter email"
+                        value={login.loginEmail}
+                        onChange={(e) => {
+                          setErrMsg(false);
+                          setLogin({ ...login, loginEmail: e.target.value });
+                        }}
+                      />
                     </Form.Group>
                     <Form.Group controlId="formBasicPassword">
                       <Form.Label className="azul-claro">Password</Form.Label>
-                      <Form.Control type="password" placeholder="Password" value={login.loginEmail} onChange={(e)=>{
-                        setLogin({...login,loginEmail:e.target.value})
-                      }}/>
+                      <Form.Control
+                        required
+                        type="password"
+                        placeholder="Password"
+                        value={login.password}
+                        onChange={(e) => {
+                          setErrMsg(false);
+                          setLogin({ ...login, password: e.target.value });
+                        }}
+                      />
                     </Form.Group>
                     <Link to="/resetPassword" className="d-block mb-3">
                       <small className="font-italic mb-5">
@@ -69,7 +116,7 @@ const fetchData =  await fetch('users/login',{
                       variant="primary"
                       type="submit"
                       className="px-5 py-2 d-block btn-block rounded-pill"
-                      style={{backgroundColor:'#05387e',border:'none'}}
+                      style={{ backgroundColor: '#05387e', border: 'none' }}
                       onClick={handleLogin}
                     >
                       Login
@@ -79,10 +126,10 @@ const fetchData =  await fetch('users/login',{
                     <Button
                       variant="primary"
                       type="submit"
-                      className="px-5 py-2 d-block btn-block rounded-pill"
-                      style={{backgroundColor:'#187cb8',border:'none'}}
+                      className="px-5 py-2 mb-5 d-block btn-block rounded-pill"
+                      style={{ backgroundColor: '#187cb8', border: 'none' }}
                     >
-                      Login with Facebook
+                      <FaFacebook /> Login with Facebook
                     </Button>
                   </Form>
                 </Col>
@@ -90,24 +137,46 @@ const fetchData =  await fetch('users/login',{
             </Col>
             <Col md={6} id="loginRight">
               <Row>
-                <Col md={{span:6, offset:3}}>
-                <h1 className="font-bold azul-oscuro text-center mb-5">Don't worry and <span className="verde-claro font-bold">simplify</span> your life as a freelancer</h1>
-                
-                <p className="azul-oscuro text-center mt-5"><FaCheckCircle /> Digitize and control your epenses and sales</p>
-                <p className="azul-oscuro text-center"><FaCheckCircle /> Create and send invoices</p>
-                <p className="azul-oscuro text-center"><FaCheckCircle /> Know the net result and have a forecast of your taxes</p>
-                <p className="azul-oscuro text-center"><FaCheckCircle /> Anticipate the collection of your bills</p>
-                <p className="azul-oscuro text-center"><FaCheckCircle /> Connect your bank and control your treasury</p>
-                <p className="azul-oscuro text-center"><FaCheckCircle /> File your taxes with our agency</p>
-                <Button
-                      variant="primary"
-                      type="submit"
-                      className="px-5 py-2 d-block btn-block rounded-pill mt-5"
-                      style={{backgroundColor:'transparent',color:'#26a64d',border:'1px solid #26a64d'}}
-                    >
-                      Sign Up
-                    </Button>
+                <Col md={{ span: 6, offset: 3 }}>
+                  <h1 className="font-bold azul-oscuro text-center mb-5">
+                    Don't worry and{' '}
+                    <span className="verde-claro font-bold">simplify</span> your
+                    life as a freelancer
+                  </h1>
 
+                  <p className="azul-oscuro text-center mt-5">
+                    <FaCheckCircle /> Digitize and control your epenses and
+                    sales
+                  </p>
+                  <p className="azul-oscuro text-center">
+                    <FaCheckCircle /> Create and send invoices
+                  </p>
+                  <p className="azul-oscuro text-center">
+                    <FaCheckCircle /> Know the net result and have a forecast of
+                    your taxes
+                  </p>
+                  <p className="azul-oscuro text-center">
+                    <FaCheckCircle /> Anticipate the collection of your bills
+                  </p>
+                  <p className="azul-oscuro text-center">
+                    <FaCheckCircle /> Connect your bank and control your
+                    treasury
+                  </p>
+                  <p className="azul-oscuro text-center">
+                    <FaCheckCircle /> File your taxes with our agency
+                  </p>
+                  <Button
+                    variant="primary"
+                    type="submit"
+                    className="px-5 py-2 d-block btn-block rounded-pill mt-5"
+                    style={{
+                      backgroundColor: 'transparent',
+                      color: '#26a64d',
+                      border: '1px solid #26a64d',
+                    }}
+                  >
+                    Sign Up
+                  </Button>
                 </Col>
               </Row>
             </Col>
@@ -115,7 +184,7 @@ const fetchData =  await fetch('users/login',{
         </Container>
       </Layout>
     </>
-  );
+  )
 }
 
 export default App;

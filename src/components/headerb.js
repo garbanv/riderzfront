@@ -26,6 +26,7 @@ export default function Header() {
       {/* <a href="#" class="closebtn">&times;</a> */}
       <Link to="/signup" onClick={closeNav}>Register</Link>
       <Link to="/login" onClick={closeNav}>Login</Link>
+      <Link to="/dashboard" onClick={closeNav}>Dashboard</Link>
     </div>
     <Navbar expand="lg" className="" fixed="top">
       <Container fluid>

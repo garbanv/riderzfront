@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './header';
 import HeaderB from './headerb';
+import {UserProvider} from '../context/userContext'
 
 
 export default function layout({children}) {
@@ -12,9 +13,10 @@ export default function layout({children}) {
         }
     }
     return (
-        <div>
+        
+        <UserProvider>
             {isLoginPage()}
             {children}
-        </div>
+        </UserProvider>
     )
 }

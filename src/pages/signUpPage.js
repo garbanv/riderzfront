@@ -20,9 +20,8 @@ const [registro,setRegistro] =useState({
 async function handleRegistro(e){
 
   e.preventDefault();
-const fetchData =  await fetch('users/signup',{
+const fetchData =  await fetch('http://localhost:7000/users/signup',{
       method:'POST',
-      credentials: 'include',
       headers:{
         'Accept': 'application/json',
         'Access-Control-Allow-Origin': '*',
