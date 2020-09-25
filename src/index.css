@@ -386,6 +386,169 @@ LANDING NAV */
   font-size:14px;
   text-align: center;
 }
+
+
+/* FIRST STEP PAGE */
+.firstStepLeft {
+background-image: url('./img/firstStepLeftImgBg.png');
+background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size:auto;
+  min-height: 100vh;
+  min-height: 100%;
+padding:101px 0 30px 96px;
+
+}
+
+.firstStepLeft button {
+  padding: 15px 100px !important;
+  margin-top:41px;
+  } 
+
+
+#firstStep h3 {
+  font-size:82px;
+  font-weight: 800;
+  line-height: 72px;
+  padding-left:10px;
+  text-align: left;
+}
+
+#firstStep p {
+  margin-top:20px;
+  padding-left:10px;
+  font-size:20px;
+  margin-bottom:71px;
+}
+
+
+
+#firstStep label {
+  font-size:20px;
+  margin-left:53px;
+  position: relative;
+  top:-5px;
+}
+
+
+.firstStepRight {
+  background-color:var(--color-claro);
+  min-height: 100vh;
+  min-height: 100%;
+  background-image: url('./img/fistStepRightImgBg.png');
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
+
+.firstStepRight p{
+  margin-top: 265px !important;
+  font-size:28px !important;
+  color:var(--azul-oscuro)
+  }
+
+
+/* NEARLY THERE PAGE */
+.NearlyThereLeft {
+  background-image: url('./img/firstStepLeftImgBg.png');
+  background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size:auto;
+    min-height: 100vh;
+    min-height: 100%;
+  padding:101px 0 30px 96px;
+  
+  }
+
+  .firstStepLeft button {
+    padding: 15px 100px !important;
+    margin-top:41px;
+    } 
+  
+  
+  .NearlyThereLeft h3 {
+    font-size:82px;
+    font-weight: 800;
+    line-height: 72px;
+    padding-left:10px;
+    text-align: left;
+  }
+  
+  .NearlyThereLeft p {
+    margin-top:20px;
+    padding-left:10px;
+    font-size:20px;
+    margin-bottom:50px;
+  }
+
+  .NearlyThereLeft button {
+    padding:15px 80px;
+    font-size:14px;
+  }
+  .nearlyThereButtonRight {
+    border:1px solid var(--azul-oscuro) !important;
+    transition:1s ease-in-out;
+    
+  }
+
+  .nearlyThereButtonRight:hover {
+    border:1px solid var(--azul-oscuro) !important;
+    background-color: var(--azul-oscuro);
+    color:white !important;
+    
+  }
+  
+  .NearlyThereRight {
+    background-color:var(--color-claro);
+    min-height: 100vh;
+    min-height: 100%;
+    background-image: url('./img/fistStepRightImgBg.png');
+    background-repeat: no-repeat;
+    background-position: bottom right;
+  }
+  
+  .NearlyThereRight p{
+    margin-top: 265px !important;
+    font-size:28px !important;
+    color:var(--azul-oscuro)
+    }
+
+
+    /* READY PAGE */
+    .readyLeft {
+      color:var(--azul-oscuro)
+    }
+
+    .readyLeft h3  {
+      padding-top:101px;
+      font-weight: 800;
+      font-size:82px;
+      color:var(--azul-claro)
+    }
+    .readyLeft h3 span {
+      color:var(--azul-oscuro)
+    }
+
+    .readyRight {
+      background-color:var(--color-claro);
+      min-height: 100vh;
+      height:100%;
+      background-image: url('./img/fistStepRightImgBg.png');
+      background-repeat: no-repeat;
+      background-position: bottom right;
+      
+    }
+
+    .readyRight p {
+    margin-top: 161px;
+    font-size:28px;
+    margin-left:85px;
+    letter-spacing: 2.8;
+    text-align: left;
+    color:var(--azul-oscuro)
+    }
+    
+
+
 /* MEDIA QUERIES */
 
 @media (max-width: 375px) {
@@ -415,7 +578,17 @@ LANDING NAV */
   #loginLeft p {
     font-size: 11px;
   }
+
+  .firstStepLeft h3 {
+    font-size:54px !important;
+  }
 }
+
+
+/* SM */
+@media (min-width: 576px) {  
+}
+/* SM */
 
 @media screen and (max-height: 450px) {
   .sidenav {
@@ -424,6 +597,7 @@ LANDING NAV */
   .sidenav a {
     font-size: 18px;
   }
+
 }
 
 @media (max-width: 768px) {
@@ -462,6 +636,10 @@ LANDING NAV */
   #loginRight h1 {
     font-size: 25px;
     letter-spacing: -1.1px;
+  }
+
+  .firstStepLeft h3 {
+    font-size:54px !important;
   }
 }
 

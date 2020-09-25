@@ -16,7 +16,6 @@ export const ProtectedRoute = ({ component: Component, ...rest }) => {
           }
         }
         }/>
-          // localStorage.getItem('token') ? <Componen {...props} /> : (null)
       }}
     />
   );

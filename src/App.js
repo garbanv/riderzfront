@@ -10,6 +10,9 @@ import SuccessLogin from './pages/successLogin'
 import Dashboard from './pages/dashboard'
 import SignUp from './pages/signUpPage'
 import Problem from './pages/problemPage'
+import FirstStep from './pages/firstStep'
+import NearlyThere from './pages/nearlyThere'
+import Ready from './pages/ready'
 import {ProtectedRoute} from './components/protected.route'
 import {
   BrowserRouter as Router,
@@ -29,6 +32,9 @@ function App() {
           <Route exact path="/signup"><SignUp /></Route>
           <Route exact path="/successLogin"><SuccessLogin /></Route>
           <Route exact path="/problem"><Problem /></Route>
+          <Route exact path="/firststep"><FirstStep /></Route>
+          <Route exact path="/nearlythere"><NearlyThere /></Route>
+          <Route exact path="/ready"><Ready /></Route>
           <ProtectedRoute
           exactpath="/dashboard"
           component={Dashboard}

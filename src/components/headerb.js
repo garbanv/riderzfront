@@ -1,6 +1,7 @@
-import React,{useState} from 'react';
+import React,{useState,useContext } from 'react';
 import {Navbar,Nav, Container} from 'react-bootstrap';
 import NavLogo from '../img/navLogoAzul.png';
+import { UserContext } from '../context/userContext';
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,6 +10,7 @@ import {
 } from "react-router-dom";
 
 export default function Header() {
+  const [isLoggedIn, setIsLoggedIn] = useContext(UserContext);
   const sidenav = document.getElementById("mySidenav");
 
   const [showNav, setShowNav] = useState(false)
@@ -24,13 +26,14 @@ export default function Header() {
     <>
     <div id="mySidenav" className="sidenav">
       {/* <a href="#" class="closebtn">&times;</a> */}
+      {isLoggedIn ? "Hola" : "Logeate"}
       <Link to="/signup" onClick={closeNav}>Register</Link>
       <Link to="/login" onClick={closeNav}>Login</Link>
       <Link to="/dashboard" onClick={closeNav}>Dashboard</Link>
     </div>
     <Navbar expand="lg" className="" fixed="top">
       <Container fluid>
-      <Navbar.Brand href="#home"><img src={NavLogo}/></Navbar.Brand>
+      <Navbar.Brand href="#home"><Link to="/"><img src={NavLogo}/></Link></Navbar.Brand>
       <Nav className="ml-auto">
         <div className="burguer" onClick={handleNav}>
           <div></div>
