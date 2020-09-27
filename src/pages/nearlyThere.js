@@ -1,8 +1,29 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Layout from '../components/layout';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import {useHistory} from 'react-router-dom';
 
 export default function NearlyThere() {
+  console.log(sessionStorage.getItem('time_as_freelancer'));
+  const history=useHistory();
+  const [userInfo,setUserInfo] = useState({
+    nif:'',
+    postcode:'',
+    country:'',
+    iban:'',
+    address:'',
+    city:'',
+    ssc:''
+  })
+
+  const handleSkip = ()=> {
+    history.push('/ready')
+  }
+
+  const handleSubmit= ()=> {
+    
+  }
+
   return (
     <Layout>
       <Container fluid id="NearlyThere" className="NearlyThere">
@@ -31,25 +52,39 @@ export default function NearlyThere() {
                     <Form.Control
                       required
                       type="text"
-                      placeholder="Enter email"
+                      onChange={(e)=>{
+                        setUserInfo({...userInfo,nif:e.target.value})
+                      }}
                     />
                   </Form.Group>
 
                   <Form.Group>
                     <Form.Label className="azul-claro">Postcode</Form.Label>
-                    <Form.Control required type="text" />
+                    <Form.Control required type="text" 
+                    onChange={(e)=>{
+                      setUserInfo({...userInfo,postcode:e.target.value})
+                    }}
+                    />
                   </Form.Group>
 
                   <Form.Group>
                     <Form.Label className="azul-claro">Country</Form.Label>
-                    <Form.Control required type="text" />
+                    <Form.Control required type="text" 
+                    onChange={(e)=>{
+                      setUserInfo({...userInfo,country:e.target.value})
+                    }}
+                    />
                   </Form.Group>
 
                   <Form.Group>
                     <Form.Label className="azul-claro">
                       IBAN <small>This will be used to pay your taxes</small>
                     </Form.Label>
-                    <Form.Control required type="text" />
+                    <Form.Control required type="text" 
+                    onChange={(e)=>{
+                      setUserInfo({...userInfo,iban:e.target.value})
+                    }}
+                    />
                     <small>Example: ES662100000000000000</small>
                   </Form.Group>
                 </Form>
@@ -57,18 +92,30 @@ export default function NearlyThere() {
               <Col md={6} className="">
                 <Form.Group>
                   <Form.Label className="azul-claro">Legal Address</Form.Label>
-                  <Form.Control required type="text" />
+                  <Form.Control required type="text" 
+                  onChange={(e)=>{
+                    setUserInfo({...userInfo,address:e.target.value})
+                  }}
+                  />
                 </Form.Group>
                 <Form.Group>
                   <Form.Label className="azul-claro">City</Form.Label>
-                  <Form.Control required type="text" />
+                  <Form.Control required type="text" 
+                  onChange={(e)=>{
+                    setUserInfo({...userInfo,city:e.target.value})
+                  }}
+                  />
                 </Form.Group>
                 <Form.Group>
                   <Form.Label className="azul-claro">
                     Social Security Number
                     
                   </Form.Label>
-                  <Form.Control required type="text" />
+                  <Form.Control required type="text" 
+                  onChange={(e)=>{
+                    setUserInfo({...userInfo,ssc:e.target.value})
+                  }}
+                  />
                   <small>Example: ES662100000000000000</small>
                 </Form.Group>
               </Col>
@@ -81,7 +128,7 @@ export default function NearlyThere() {
                       type="submit"
                       className="d-block  rounded-pill"
                       style={{ backgroundColor: '#05387e', border: 'none' }}
-                      
+                      onClick={handleSubmit}
                     >
                       Next
                     </Button>
@@ -91,8 +138,8 @@ export default function NearlyThere() {
                         <div className="d-flex justify-content-end">
                       <Button
                       variant=""
-                      type="submit"
                       className=" d-block  rounded-pill nearlyThereButtonRight"
+                      onClick={handleSkip}
                     >
                       Skip
                     </Button>

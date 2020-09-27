@@ -515,7 +515,8 @@ padding:101px 0 30px 96px;
 
     /* READY PAGE */
     .readyLeft {
-      color:var(--azul-oscuro)
+      color:var(--azul-oscuro);
+      font-size:20px;
     }
 
     .readyLeft h3  {
@@ -547,7 +548,63 @@ padding:101px 0 30px 96px;
     color:var(--azul-oscuro)
     }
     
+    .readyCard p {
+      font-size:14px;
+      color:#656565;
+    }
+    .readyCard button {
+      font-size:14px;
+    }
+    .readyCard h4 {
+      font-size:30px;
+      font-weight: 800;
+    }
 
+    .readyCardButtonContainer {
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      font-size:14px;
+    }
+
+    .readyCardUploadBtn {
+      background-color:var(--azul-oscuro) !important;
+    }
+    .readyCardPlansBtn {
+      background-color:var(--verde-claro) !important;
+      border:none !important;
+      
+    }
+    .readyCardKeepBtn {
+      background-color:var(--naranja) !important;
+      border:none !important;
+      padding-left:35px !important;
+      padding-right:35px !important;
+    }
+
+    #uploadInvoiceCard {
+
+      background-image: url('./img/readyCardBlueElement.png');
+      background-repeat: no-repeat;
+      background-position: center right;
+      background-position-x: 130%;
+    }
+
+    #seeThePlansCard {
+
+      background-image: url('./img/readyCardGreenElement.png');
+      background-repeat: no-repeat;
+      background-position: center right;
+      background-position-x: 130%;
+    }
+
+    #keepNavigatingCard {
+
+      background-image: url('./img/readyCardClaroElement.png');
+      background-repeat: no-repeat;
+      background-position: center right;
+      background-position-x: 130%;
+    }
 
 /* MEDIA QUERIES */
 
@@ -581,6 +638,52 @@ padding:101px 0 30px 96px;
 
   .firstStepLeft h3 {
     font-size:54px !important;
+  }
+
+  .readyLeft h3  {
+    padding-top:101px;
+    font-weight: 800;
+    font-size:54.5px;
+    color:var(--azul-claro)
+  }
+
+  .readyCard h4 {
+    margin-top:5px;
+    font-size:40px;
+    font-weight: 800;
+    line-height:32px;
+  }
+
+  #uploadInvoiceCard {
+
+    background-image: url('./img/readyCardBlueElement.png');
+    background-repeat: no-repeat;
+    background-position:  right;
+    background-position-x: -530%;
+    background-size:cover;
+    
+  }
+
+  .readyCardButtonContainer {
+    display:flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size:12px;
+  }
+
+  .readyCardUploadBtn {
+    background-color:var(--azul-oscuro) !important;
+    padding:20px 20px !important;
+  }
+  .readyCardPlansBtn {
+    background-color:var(--verde-claro) !important;
+    border:none !important;
+    padding:20px 20px !important;
+  }
+  .readyCardKeepBtn {
+    background-color:var(--naranja) !important;
+    border:none !important;
+    padding:20px 40px !important;
   }
 }
 
