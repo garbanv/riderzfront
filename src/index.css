@@ -998,6 +998,15 @@ input[type="file"] {
 }
 
 
+/* INVOICES */
+#invoicesDetails {
+  background-color:white;
+}
+.invoicesDetailsNumber {
+
+  color:#bebebe;
+
+}
 
 /* MEDIA QUERIES */
 

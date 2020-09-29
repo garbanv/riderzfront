@@ -25,7 +25,7 @@ export default function Dashboard() {
                 Dashboard
               </Link>
               <Link>Profile</Link>
-              <Link to="/createinvoice">Invoices</Link>
+              <Link to="/invoices">Invoices</Link>
               <Link>Expenses</Link>
               <Link>Taxes</Link>
             </div>

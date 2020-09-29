@@ -13,6 +13,7 @@ import Problem from './pages/problemPage'
 import FirstStep from './pages/firstStep'
 import NearlyThere from './pages/nearlyThere'
 import CreateInvoice from './pages/createInvoice'
+import Invoices from './pages/invoices'
 import Ready from './pages/ready'
 import {ProtectedRoute} from './components/protected.route'
 import {
@@ -37,6 +38,7 @@ function App() {
           <Route exact path="/nearlythere"><NearlyThere /></Route>
           <Route exact path="/ready"><Ready /></Route>
           <Route exact path="/createinvoice"><CreateInvoice/></Route>
+          <Route exact path="/invoices"><Invoices/></Route>
           {/* <ProtectedRoute
           exactpath="/dashboard"
           component={Dashboard}
