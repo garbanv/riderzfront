@@ -12,6 +12,7 @@ import SignUp from './pages/signUpPage'
 import Problem from './pages/problemPage'
 import FirstStep from './pages/firstStep'
 import NearlyThere from './pages/nearlyThere'
+import CreateInvoice from './pages/createInvoice'
 import Ready from './pages/ready'
 import {ProtectedRoute} from './components/protected.route'
 import {
@@ -24,24 +25,26 @@ import {
 
 function App() {
   return (
-    <Layout>
+    // <Layout>
         <Switch>
           <Route exact path="/"><Home /></Route>
           {/* <Route exact path="/nosotros"><Nosotros /></Route> */}
-          <Route exact path="/login"><Login /></Route>
+          <Route exact path="/login"><Layout><Login /></Layout></Route>
           <Route exact path="/signup"><SignUp /></Route>
           <Route exact path="/successLogin"><SuccessLogin /></Route>
           <Route exact path="/problem"><Problem /></Route>
           <Route exact path="/firststep"><FirstStep /></Route>
           <Route exact path="/nearlythere"><NearlyThere /></Route>
           <Route exact path="/ready"><Ready /></Route>
-          <ProtectedRoute
+          <Route exact path="/createinvoice"><CreateInvoice/></Route>
+          {/* <ProtectedRoute
           exactpath="/dashboard"
           component={Dashboard}
-          />
+          /> */}
+          <Route exact path="/dashboard"><Dashboard/></Route>
           <Route path="*" component={()=>"404 NOT FOUND"}/>
         </Switch>
-    </Layout>
+    // </Layout>
   );
 }
 

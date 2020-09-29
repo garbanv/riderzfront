@@ -9,13 +9,13 @@ import transparencyImg from '../img/transparencyImg.png';
 import taxesDayImg from '../img/taxesdayImg.png';
 import { BiCheck } from 'react-icons/bi';
 import Footer from '../components/footer'
-
+import Layout from '../components/layout';
 export default function home() {
 
  
 
   return (
-    <>
+    <><Layout>
       <section id="hero" className="">
         <Container fluid>
           <Row>
@@ -277,6 +277,7 @@ export default function home() {
         </Container>
       </section>
       <Footer/>
+    </Layout>
     </>
   );
 }

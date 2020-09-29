@@ -1,37 +1,14 @@
-import React, {useState} from 'react';
-import DLayout from '../components/dashboardLayout';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import React from 'react'
+import {Container, Row, Col, Button} from 'react-bootstrap'
+import {Link} from 'react-router-dom';
 import NavLogo from '../img/navLogoAzul.png';
 import DummyImg from '../img/profile-dummy.png';
-import { Link } from 'react-router-dom';
 import upadloadIcon from '../img/uploadIcon.png';
 
-export default function Dashboard() {
-  return (
-    <DLayout>
-      <Container fluid id="dashboardContainer">
-        <Row>
-          <Col md={2} id="sidenav" className="shadow ">
-            <div className="sidenavHeader p-4 d-flex flex-column justify-content-center align-items-center">
-              <Link to="/"><img src={NavLogo} className="mb-3 " /></Link>
-              <img
-                src="https://www.w3schools.com/howto/img_avatar.png"
-                className="avatar img-fluid mb-3"
-              />
-              <small className="ml-2">Alexei Garban</small>
-            </div>
-            <div className="dashboardNav">
-              <Link className="azul-oscuro font-weight-bold active">
-                Dashboard
-              </Link>
-              <Link>Profile</Link>
-              <Link to="/createinvoice">Invoices</Link>
-              <Link>Expenses</Link>
-              <Link>Taxes</Link>
-            </div>
-          </Col>
-          <Col md={10} id="dashboardContent" className="py-3 px-5">
-            <Row className="mb-4 dashboardTop">
+export default function mainDashboard() {
+    return (
+        <div>
+             <Row className="mb-4 dashboardTop">
               <Col md={8}>
                 <h1>Dashboard</h1>
               </Col>
@@ -121,8 +98,6 @@ export default function Dashboard() {
               </Col>
             </Row>
 
-           
-
             <section className="dashboardFooter py-5">
               <Container>
                 <Row>
@@ -140,9 +115,7 @@ export default function Dashboard() {
                 </Row>
               </Container>
             </section>
-          </Col>
-        </Row>
-      </Container>
-    </DLayout>
-  );
+            
+        </div>
+    )
 }

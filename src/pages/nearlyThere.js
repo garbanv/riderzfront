@@ -20,8 +20,23 @@ export default function NearlyThere() {
     history.push('/ready')
   }
 
-  const handleSubmit= ()=> {
-    
+  async function handleSubmit(e){
+
+    e.preventDefault();
+  const fetchData =  await fetch('http://localhost:7000/users/signup',{
+        method:'POST',
+        headers:{
+          'Accept': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': '*',
+          'Access-Control-Allow-Headers': '*',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({...userInfo})
+    })
+   const response =  await fetchData;
+   const res = console.log(response)
+  
   }
 
   return (

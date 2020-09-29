@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
+/* body,html {
+background-color:#f2f2f2;
+} */
 
 :root {
   --azul-oscuro: #05387e;
@@ -12,6 +15,12 @@
 img {
   max-width: 100%;
   height: auto;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 
 .font-bold {
@@ -353,86 +362,80 @@ LANDING NAV */
   border-bottom:1px solid white;
   } */
 
-  .newsletterTop {
-    border-left:1px solid white;
-    border-bottom:1px solid white
-  }
-  .newsletterBottom {
-    border-left:1px solid white;
-  }
-#footer  .input-group-append {
-    margin-left:5px;
-    }
+.newsletterTop {
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+}
+.newsletterBottom {
+  border-left: 1px solid white;
+}
+#footer .input-group-append {
+  margin-left: 5px;
+}
 #footer svg {
-  width:32px;
-  height:auto;
-  color:white;
+  width: 32px;
+  height: auto;
+  color: white;
 }
 
 .footerTop2 a {
-  display:block;
-  color:white;
-  margin-bottom:8px;
-  }
+  display: block;
+  color: white;
+  margin-bottom: 8px;
+}
 
 .footerBottom2 {
-  border-left:1px solid var(--azul-oscuro);
-  border-right:1px solid var(--azul-oscuro);
+  border-left: 1px solid var(--azul-oscuro);
+  border-right: 1px solid var(--azul-oscuro);
 }
 
 .footerBottom {
-  background-color:var(--azul-claro);
-  color:var(--azul-oscuro);
-  font-size:14px;
+  background-color: var(--azul-claro);
+  color: var(--azul-oscuro);
+  font-size: 14px;
   text-align: center;
 }
 
-
 /* FIRST STEP PAGE */
 .firstStepLeft {
-background-image: url('./img/firstStepLeftImgBg.png');
-background-repeat: no-repeat;
+  background-image: url('./img/firstStepLeftImgBg.png');
+  background-repeat: no-repeat;
   background-position: bottom left;
-  background-size:auto;
+  background-size: auto;
   min-height: 100vh;
   min-height: 100%;
-padding:101px 0 30px 96px;
-
+  padding: 101px 0 30px 96px;
 }
 
 .firstStepLeft button {
   padding: 15px 100px !important;
-  margin-top:41px;
-  } 
-
+  margin-top: 41px;
+}
 
 #firstStep h3 {
-  font-size:82px;
+  font-size: 82px;
   font-weight: 800;
   line-height: 72px;
-  padding-left:10px;
+  padding-left: 10px;
   text-align: left;
 }
 
 #firstStep p {
-  margin-top:20px;
-  padding-left:10px;
-  font-size:20px;
-  margin-bottom:71px;
+  margin-top: 20px;
+  padding-left: 10px;
+  font-size: 20px;
+  margin-bottom: 71px;
 }
-
-
 
 #firstStep label {
-  font-size:20px;
-  margin-left:53px;
+  font-size: 20px;
+  margin-left: 53px;
   position: relative;
-  top:-5px;
+  top: -5px;
 }
 
-
 .firstStepRight {
-  background-color:var(--color-claro);
+  background-color: var(--color-claro);
   min-height: 100vh;
   min-height: 100%;
   background-image: url('./img/fistStepRightImgBg.png');
@@ -440,172 +443,318 @@ padding:101px 0 30px 96px;
   background-position: bottom right;
 }
 
-.firstStepRight p{
+.firstStepRight p {
   margin-top: 265px !important;
-  font-size:28px !important;
-  color:var(--azul-oscuro)
-  }
-
+  font-size: 28px !important;
+  color: var(--azul-oscuro);
+}
 
 /* NEARLY THERE PAGE */
 .NearlyThereLeft {
   background-image: url('./img/firstStepLeftImgBg.png');
   background-repeat: no-repeat;
-    background-position: bottom left;
-    background-size:auto;
-    min-height: 100vh;
-    min-height: 100%;
-  padding:101px 0 30px 96px;
-  
-  }
+  background-position: bottom left;
+  background-size: auto;
+  min-height: 100vh;
+  min-height: 100%;
+  padding: 101px 0 30px 96px;
+}
 
-  .firstStepLeft button {
-    padding: 15px 100px !important;
-    margin-top:41px;
-    } 
-  
-  
-  .NearlyThereLeft h3 {
-    font-size:82px;
-    font-weight: 800;
-    line-height: 72px;
-    padding-left:10px;
-    text-align: left;
-  }
-  
-  .NearlyThereLeft p {
-    margin-top:20px;
-    padding-left:10px;
-    font-size:20px;
-    margin-bottom:50px;
-  }
+.firstStepLeft button {
+  padding: 15px 100px !important;
+  margin-top: 41px;
+}
 
-  .NearlyThereLeft button {
-    padding:15px 80px;
-    font-size:14px;
-  }
-  .nearlyThereButtonRight {
-    border:1px solid var(--azul-oscuro) !important;
-    transition:1s ease-in-out;
-    
-  }
+.NearlyThereLeft h3 {
+  font-size: 82px;
+  font-weight: 800;
+  line-height: 72px;
+  padding-left: 10px;
+  text-align: left;
+}
 
-  .nearlyThereButtonRight:hover {
-    border:1px solid var(--azul-oscuro) !important;
-    background-color: var(--azul-oscuro);
-    color:white !important;
-    
-  }
-  
-  .NearlyThereRight {
-    background-color:var(--color-claro);
-    min-height: 100vh;
-    min-height: 100%;
-    background-image: url('./img/fistStepRightImgBg.png');
-    background-repeat: no-repeat;
-    background-position: bottom right;
-  }
-  
-  .NearlyThereRight p{
-    margin-top: 265px !important;
-    font-size:28px !important;
-    color:var(--azul-oscuro)
-    }
+.NearlyThereLeft p {
+  margin-top: 20px;
+  padding-left: 10px;
+  font-size: 20px;
+  margin-bottom: 50px;
+}
 
+.NearlyThereLeft button {
+  padding: 15px 80px;
+  font-size: 14px;
+}
+.nearlyThereButtonRight {
+  border: 1px solid var(--azul-oscuro) !important;
+  transition: 1s ease-in-out;
+}
 
-    /* READY PAGE */
-    .readyLeft {
-      color:var(--azul-oscuro);
-      font-size:20px;
-    }
+.nearlyThereButtonRight:hover {
+  border: 1px solid var(--azul-oscuro) !important;
+  background-color: var(--azul-oscuro);
+  color: white !important;
+}
 
-    .readyLeft h3  {
-      padding-top:101px;
-      font-weight: 800;
-      font-size:82px;
-      color:var(--azul-claro)
-    }
-    .readyLeft h3 span {
-      color:var(--azul-oscuro)
-    }
+.NearlyThereRight {
+  background-color: var(--color-claro);
+  min-height: 100vh;
+  min-height: 100%;
+  background-image: url('./img/fistStepRightImgBg.png');
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
 
-    .readyRight {
-      background-color:var(--color-claro);
-      min-height: 100vh;
-      height:100%;
-      background-image: url('./img/fistStepRightImgBg.png');
-      background-repeat: no-repeat;
-      background-position: bottom right;
-      
-    }
+.NearlyThereRight p {
+  margin-top: 265px !important;
+  font-size: 28px !important;
+  color: var(--azul-oscuro);
+}
 
-    .readyRight p {
-    margin-top: 161px;
-    font-size:28px;
-    margin-left:85px;
-    letter-spacing: 2.8;
-    text-align: left;
-    color:var(--azul-oscuro)
-    }
-    
-    .readyCard p {
-      font-size:14px;
-      color:#656565;
-    }
-    .readyCard button {
-      font-size:14px;
-    }
-    .readyCard h4 {
-      font-size:30px;
-      font-weight: 800;
-    }
+/* READY PAGE */
+.readyLeft {
+  color: var(--azul-oscuro);
+  font-size: 20px;
+}
 
-    .readyCardButtonContainer {
-      display:flex;
-      justify-content: center;
-      align-items: center;
-      font-size:14px;
-    }
+.readyLeft h3 {
+  padding-top: 101px;
+  font-weight: 800;
+  font-size: 82px;
+  color: var(--azul-claro);
+}
+.readyLeft h3 span {
+  color: var(--azul-oscuro);
+}
 
-    .readyCardUploadBtn {
-      background-color:var(--azul-oscuro) !important;
-    }
-    .readyCardPlansBtn {
-      background-color:var(--verde-claro) !important;
-      border:none !important;
-      
-    }
-    .readyCardKeepBtn {
-      background-color:var(--naranja) !important;
-      border:none !important;
-      padding-left:35px !important;
-      padding-right:35px !important;
-    }
+.readyRight {
+  background-color: var(--color-claro);
+  min-height: 100vh;
+  height: 100%;
+  background-image: url('./img/fistStepRightImgBg.png');
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
 
-    #uploadInvoiceCard {
+.readyRight p {
+  margin-top: 161px;
+  font-size: 28px;
+  margin-left: 85px;
+  letter-spacing: 2.8;
+  text-align: left;
+  color: var(--azul-oscuro);
+}
 
-      background-image: url('./img/readyCardBlueElement.png');
-      background-repeat: no-repeat;
-      background-position: center right;
-      background-position-x: 130%;
-    }
+.readyCard p {
+  font-size: 14px;
+  color: #656565;
+}
+.readyCard button {
+  font-size: 14px;
+}
+.readyCard h4 {
+  font-size: 30px;
+  font-weight: 800;
+}
 
-    #seeThePlansCard {
+.readyCardButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
 
-      background-image: url('./img/readyCardGreenElement.png');
-      background-repeat: no-repeat;
-      background-position: center right;
-      background-position-x: 130%;
-    }
+.readyCardUploadBtn {
+  background-color: var(--azul-oscuro) !important;
+}
+.readyCardPlansBtn {
+  background-color: var(--verde-claro) !important;
+  border: none !important;
+}
+.readyCardKeepBtn {
+  background-color: var(--naranja) !important;
+  border: none !important;
+  padding-left: 35px !important;
+  padding-right: 35px !important;
+}
 
-    #keepNavigatingCard {
+#uploadInvoiceCard {
+  background-image: url('./img/readyCardBlueElement.png');
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-position-x: 130%;
+}
 
-      background-image: url('./img/readyCardClaroElement.png');
-      background-repeat: no-repeat;
-      background-position: center right;
-      background-position-x: 130%;
-    }
+#seeThePlansCard {
+  background-image: url('./img/readyCardGreenElement.png');
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-position-x: 130%;
+}
 
+#keepNavigatingCard {
+  background-image: url('./img/readyCardClaroElement.png');
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-position-x: 130%;
+}
+
+/* DASHBOARDPAGE */
+
+#sidenav {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  background-color: white;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.dashboardNav a {
+  display: block;
+  color: black;
+  padding: 16px 55px 16px;
+  text-decoration: none;
+}
+
+#dashboardContainer {
+  background-color: #f2f2f2;
+  width: 100%;
+  height: 100%;
+}
+
+.dashboardBalance h2 {
+  font-weight: 800;
+  color: var(--azul-oscuro);
+}
+
+.dashboardTop .col-md-8 {
+  padding-left: 0 !important;
+}
+
+.dashboardTop h1 {
+  font-size: 54.5px;
+  font-weight: 800;
+  padding-left: 0 !important;
+  color: var(--azul-oscuro);
+}
+.dashboardNav a.active {
+  background-color: #f2f2f2;
+  color: var(--azul-oscuro);
+}
+
+/* Links on mouse-over */
+.dashboardNav a:hover:not(.active) {
+  background-color: #f4f4f4;
+  color: var(--azul-oscuro);
+}
+
+.dashboardBalance {
+  background-color: white;
+  color: #c1c1c1;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.accountBtn {
+  background-color: var(--azul-oscuro);
+  border: none;
+  font-size: 14px;
+  padding: 10px 24px;
+  border-radius: 20px;
+  color: white;
+  display: inline-block;
+}
+
+.salesInvoicesBtn {
+  background-color: var(--verde-oscuro);
+  border: none;
+  font-size: 14px;
+  padding: 10px 24px;
+  border-radius: 20px;
+  color: white;
+  display: inline-block;
+}
+.yourTaxesBtn {
+  background-color: var(--verde-claro);
+  border: none;
+  font-size: 14px;
+  padding: 10px 24px;
+  border-radius: 20px;
+  color: white;
+  display: inline-block;
+}
+
+.dashboardCreateInvoice,
+.salesInvoices {
+  background-color: white;
+}
+
+.dashboardCreateInvoice span {
+  background-color: var(--azul-claro);
+  padding: 8px 15px;
+  display: inline-block;
+  border-radius: 50%;
+  color: var(--azul-oscuro);
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+#salesInvoices .title p {
+  position: relative;
+  top: 7px;
+  padding-left: 10px;
+  border-left: 1px solid #888;
+  margin-left: 10px;
+}
+
+.salesInvoices  p {
+  position: relative;
+  top: 10px;  
+  margin-left: 10px;
+}
+
+/* CREATE INVOICE PAGE */
+
+.contactDetails {
+  background-color:white;
+}
+
+.invoiceDetails {
+  background-color:white;
+}
+
+.contactDetails input, .invoiceDetails input,.contactDetails select, .invoiceDetails select {
+ border-top:none;
+ border-left:none;
+ border-right:none;
+ border-radius:0;
+}
+
+.contactDetails label, .invoiceDetails label {
+color:black;
+
+font-size:15px;}
+
+.contactDetails h3, .invoiceDetails h3  {
+  color:var(--azul-oscuro)
+}
+#fileupload {
+  background-color:red;
+
+}
+
+input[type="file"] {
+  display:none;
+}
+
+.saveInvoicesBtn {
+  background-color: var(--azul-oscuro);
+  border: none;
+  font-size: 14px;
+  padding: 10px 24px;
+  border-radius: 20px;
+  color: white;
+  display: inline-block;
+}
 /* MEDIA QUERIES */
 
 @media (max-width: 375px) {
@@ -637,59 +786,56 @@ padding:101px 0 30px 96px;
   }
 
   .firstStepLeft h3 {
-    font-size:54px !important;
+    font-size: 54px !important;
   }
 
-  .readyLeft h3  {
-    padding-top:101px;
+  .readyLeft h3 {
+    padding-top: 101px;
     font-weight: 800;
-    font-size:54.5px;
-    color:var(--azul-claro)
+    font-size: 54.5px;
+    color: var(--azul-claro);
   }
 
   .readyCard h4 {
-    margin-top:5px;
-    font-size:40px;
+    margin-top: 5px;
+    font-size: 40px;
     font-weight: 800;
-    line-height:32px;
+    line-height: 32px;
   }
 
   #uploadInvoiceCard {
-
     background-image: url('./img/readyCardBlueElement.png');
     background-repeat: no-repeat;
-    background-position:  right;
+    background-position: right;
     background-position-x: -530%;
-    background-size:cover;
-    
+    background-size: cover;
   }
 
   .readyCardButtonContainer {
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: flex-end;
-    font-size:12px;
+    font-size: 12px;
   }
 
   .readyCardUploadBtn {
-    background-color:var(--azul-oscuro) !important;
-    padding:20px 20px !important;
+    background-color: var(--azul-oscuro) !important;
+    padding: 20px 20px !important;
   }
   .readyCardPlansBtn {
-    background-color:var(--verde-claro) !important;
-    border:none !important;
-    padding:20px 20px !important;
+    background-color: var(--verde-claro) !important;
+    border: none !important;
+    padding: 20px 20px !important;
   }
   .readyCardKeepBtn {
-    background-color:var(--naranja) !important;
-    border:none !important;
-    padding:20px 40px !important;
+    background-color: var(--naranja) !important;
+    border: none !important;
+    padding: 20px 40px !important;
   }
 }
 
-
 /* SM */
-@media (min-width: 576px) {  
+@media (min-width: 576px) {
 }
 /* SM */
 
@@ -700,7 +846,6 @@ padding:101px 0 30px 96px;
   .sidenav a {
     font-size: 18px;
   }
-
 }
 
 @media (max-width: 768px) {
@@ -742,7 +887,7 @@ padding:101px 0 30px 96px;
   }
 
   .firstStepLeft h3 {
-    font-size:54px !important;
+    font-size: 54px !important;
   }
 }
 
