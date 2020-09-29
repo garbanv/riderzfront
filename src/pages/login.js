@@ -165,6 +165,7 @@ function App() {
                   <p className="azul-oscuro text-center">
                     <FaCheckCircle /> File your taxes with our agency
                   </p>
+                  <Link to="/signup">
                   <Button
                     variant="primary"
                     type="submit"
@@ -176,7 +177,7 @@ function App() {
                     }}
                   >
                     Sign Up
-                  </Button>
+                  </Button></Link>
                 </Col>
               </Row>
             </Col>

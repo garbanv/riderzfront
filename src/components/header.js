@@ -32,7 +32,7 @@ export default function Header() {
 
     <Navbar expand="lg" className="" fixed="top">
       <Container fluid>
-      <Navbar.Brand href="#home"><img src={NavLogo}/></Navbar.Brand>
+      <Navbar.Brand href="#home"><Link to="/"><img src={NavLogo}/></Link></Navbar.Brand>
       <Nav className="ml-auto">
         <div className="burguer" onClick={handleNav}>
           <div></div>

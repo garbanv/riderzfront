@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
+import {Link} from 'react-router-dom'
 import Layout from '../components/layout';
 import upadloadIcon from '../img/uploadIcon.png';
 import seePlansIcon from '../img/seePlansIcon.png';
@@ -27,12 +28,13 @@ export default function ready() {
                   <p className="d-none d-sm-block">It wont take to much time!</p>
                 </Col>
                 <Col md={3} sm={6} xs={6} className="readyCardButtonContainer">
-                  <Button
+                  <Link
+                  to="/createInvoice"
                     type="submit"
                     className=" rounded-pill readyCardUploadBtn"
                   >
                     Upload
-                  </Button>
+                  </Link>
                 </Col>
               </Row>
             </div>
@@ -47,12 +49,12 @@ export default function ready() {
                   <p className="d-none d-sm-block">We have payment options!</p>
                 </Col>
                 <Col md={3} sm={6} xs={6} className="readyCardButtonContainer">
-                  <Button
+                  <Link
                     type="submit"
                     className="rounded-pill readyCardPlansBtn"
                   >
                     Contract
-                  </Button>
+                  </Link>
                 </Col>
               </Row>
             </div>

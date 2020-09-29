@@ -26,7 +26,7 @@ export default function Header() {
     <>
     <div id="mySidenav" className="sidenav">
       {/* <a href="#" class="closebtn">&times;</a> */}
-      {isLoggedIn ? "Hola" : "Logeate"}
+ 
       <Link to="/signup" onClick={closeNav}>Register</Link>
       <Link to="/login" onClick={closeNav}>Login</Link>
       <Link to="/dashboard" onClick={closeNav}>Dashboard</Link>

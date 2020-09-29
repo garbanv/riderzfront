@@ -10,9 +10,12 @@ import taxesDayImg from '../img/taxesdayImg.png';
 import { BiCheck } from 'react-icons/bi';
 import Footer from '../components/footer'
 import Layout from '../components/layout';
+import PriceTable from '../components/priceTable'
+import {Link } from 'react-router-dom';
+
+
 export default function home() {
 
- 
 
   return (
     <><Layout>
@@ -31,11 +34,13 @@ export default function home() {
                   </p>
 
                   <div className="d-flex justify-content-around">
+                  <Link to="/signup">
                     <Button
                       variant="primary"
                       type="submit"
-                      className="px-5  mt-3 rounded-pill"
+                      className="mt-3 rounded-pill"
                       style={{
+                        padding:'15px 35px',
                         backgroundColor: '#26a64d',
                         border: 'none',
                         display: 'block',
@@ -44,12 +49,14 @@ export default function home() {
                     >
                       Process your discharge
                     </Button>
-
+                    </Link>
+                    <Link to="/signup">
                     <Button
                       variant="primary"
                       type="submit"
-                      className="px-5   mt-3 rounded-pill"
+                      className="mt-3 rounded-pill"
                       style={{
+                        padding:'15px 35px',
                         backgroundColor: '#26a64d',
                         border: 'none',
                         display: 'block',
@@ -58,6 +65,7 @@ export default function home() {
                     >
                       Free upload to AEAT
                     </Button>
+                    </Link>
                   </div>
                 </Col>
               </Row>
@@ -65,9 +73,13 @@ export default function home() {
           </Row>
         </Container>
       </section>
-      <section>
+
+      <PriceTable/>
+
+
+      <section >
         <Container>
-          <Row id="getAccess" className="py-5">
+          <Row id="getAccess" className=" pb-5">
             <Col md={6}>
               <h3 className="azul-oscuro mb-5 pr-3 text-left">
                 Get access wherever you are
