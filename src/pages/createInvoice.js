@@ -58,7 +58,7 @@ export default function CreateInvoice() {
             <div className="dashboardNav">
               <Link to="/dashboard">Dashboard</Link>
               <Link>Profile</Link>
-              <Link className="azul-oscuro font-weight-bold active">
+              <Link to="/invoices"className="azul-oscuro font-weight-bold active">
                 Invoices
               </Link>
               <Link>Expenses</Link>

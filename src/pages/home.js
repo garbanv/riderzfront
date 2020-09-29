@@ -94,7 +94,7 @@ export default function home() {
                 dashboard f your activity{' '}
                 <span className="font-weight-bold">you have control!</span>
               </p>
-              <button className="btn btn-primary mt-5">Learn more </button>
+              <Link className="accountBtn mt-5">Learn More</Link>
             </Col>
             <Col md={6} className="getAccessRight">
               <img src={Section1Img} />
@@ -202,7 +202,7 @@ export default function home() {
             </Card>
           </Col>
         </Row>
-        <div className="text-center py-5"><button className="btn btn-primary">Sign Up free</button></div>
+        <div className="text-center py-5"><Link className="accountBtn">Sign Up for FREE</Link></div>
         </Container>
       </section>
 
